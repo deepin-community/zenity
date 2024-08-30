@@ -1,3 +1,274 @@
+Zenity 4.0.2
+  Changes and fixes since 4.0.1:
+  - tree: Enable 'activates-default' in GtkSearchEntry (Logan Rathbone) (#90)
+  - main: Fix command-line signal signature (chrysn) (#91)
+  - filesel: Passing a dir with trailing '/' should open that dir (Logan
+    Rathbone) (#85)
+  - colview: Return if nth item of row exceeds num items in row (Logan
+    Rathbone) (#82)
+  - tree: Don't try to print nonexisting items (Logan Rathbone)
+  - colview: Add more sanity checks (Logan Rathbone)
+  - colview: Clicking on column titles should sort items (Logan Rathbone) (#86)
+  - filesel: Allow a non-existing filename with --save and add associated test
+    (Logan Rathbone) (#80)
+  - filesel: Remove spurious extra _show() call (Logan Rathbone)
+
+  Translation updates:
+  - Anders Jonsson (sv)
+  - Andi Chandler (en_GB)
+  - Artur S0 (ru)
+  - Asier Sarasua Garmendia (eu)
+  - Aurimas Černius (lt)
+  - Balázs Úr (hu)
+  - Baurzhan Muftakhidinov (kk)
+  - Guntupalli Karunakar (hi)
+  - Hugo Carvalho (pt)
+  - Jordi Mas i Hernandez (ca)
+  - Jürgen Benvenuti (de)
+  - Kukuh Syafaat (id)
+  - Martin (sl)
+  - Piotr Drąg (pl)
+  - Sabri Ünal (tr)
+  - Victor Trista (zh_CN)
+  - Yaron Shahrabani (he)
+  - Yuri Chornoivan (uk)
+  - Boyuan Yang (zh_CN)
+
+Zenity 4.0.1
+  Changes and fixes since 4.0.0:
+  - Bump webkit2gtk requirement in README (Logan Rathbone)
+  - about: The licence is LGPL2.1+, not GPL (Logan Rathbone)
+  - entry: Calculate number of --entry-text's properly (Logan Rathbone) (#75)
+  - test: Add entry test in response to issue #75 (Logan Rathbone)
+  - question: fix option --default-cancel (kvark)
+  - calendar: Fix off-by-one in day (Logan Rathbone)
+  - test: Add test for --calendar (Logan Rathbone)
+
+  Translation updates:
+  - Artur S0 (ru)
+  - Jürgen Benvenuti (de)
+  - Yuri Chornoivan (uk)
+
+Zenity 4.0.0
+  1st stable release of Zenity based on libadwaita/gtk4.
+
+  Several command-line options have been deprecated since 3.x.  These
+  deprecations will either activate an alternate action, or do nothing.  In
+  either case, a deprecation warning will be printed to STDERR. This is to
+  ensure as smooth a transition from scripts targeting Zenity 3.x as possible.
+
+  TAKE NOTICE that in Zenity 4.4.0, estimated to be released in about twelve
+  (12) months from 4.0.0, these options will be fully removed and scripts using
+  these options may fail to run. So if you are receiving deprecation warnings,
+  kindly take the time to update your scripts accordingly.
+
+  Changes and bugfixes since 3.99.91 (Logan Rathbone):
+  - Add rudimentary test suite
+  - progress: --auto-close and --percentage=100 don't co-mingle
+  - about: Port to libadwaita; update copyright info
+  - forms: Remove unused variable
+  - forms: Port GtkComboBox to GtkDropDown
+  - tree/colview: Implement missing --hide-header option
+  - progress: OK should be clickable if --percentage=100 at the outset
+  - NEWS: fix typo
+
+  Translation updates:
+  - Yaron Shahrabani (he)
+
+Zenity 3.99.91
+  2nd release candidate of the upcoming zenity 4.0, based on libadwaita/gtk4.
+
+  Changes and bugfixes since 3.99.90 (Logan Rathbone):
+  - password: Remove spurious "Warning" heading
+  - password: Only fetch username buffer if username option specified
+  - build: Add implicit fallthrough warnings
+  - password/msg: Handle ZENITY_TIMEOUT to be in line with other
+    libadwaita-based dialogs
+  - filesel: Fix exit statuses for cancel and timeout
+  - Cleanup 'timeout' and make it work properly for all dialogs
+  - util: Maintain default timeout exit status as 5 for backwards compat;
+    various cleanups
+  - text: webkit2gtk-6.0 fixes
+  - msg: Code cleanups
+  - Translation updates:
+      Artur S0 (ru)
+
+Zenity 3.99.90
+  1st release candidate of the upcoming zenity 4.x, based on libadwaita/gtk4.
+  - build: Make building manpage dependent upon manpage option (Guillermo
+    Joandet)
+  - text: Handle long inputs properly (#65) (Lukáš Tyrychtr)
+  - colview: Use g_signal_connect_object (Logan Rathbone)
+  - tree: Fix reading input from a named pipe (#71) (Lukáš Tyrychtr)
+  - tree/colview: Return correct value when filtered using search; code
+    cleanups (Logan Rathbone)
+  - colview: Add missing declaration to header (Logan Rathbone)
+  - build: Make implicit declarations an error (Logan Rathbone)
+  - build: Make zenity4 compile against gtk 4.12 without deprecation warnings
+    (Logan Rathbone)
+  - tree: --checklist or --radiolist with < 2 cols should be an error (Logan
+    Rathbone)
+  - tree: Fix output for non-check/radio multiple selections (Logan Rathbone)
+  - util: Replace gtk_window_destroy() with gtk_application_remove_window()
+    (#72)
+  - Translation updates:
+      Daniel Rusek (cs)
+      Luming Zh (zh_CN)
+      Sabri Ünal (tr)
+      Yuri Chornoivan (uk)
+
+Zenity 3.99.2
+  3rd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+  - Minor code cleanups (Logan Rathbone)
+  - option: Don't try to access stack-based argv within a glib2 mainloop
+    (likely fixes RH bugs 2216049 and 2214000) (Logan Rathbone)
+  - option: Allow --version and --help to work without a display server running
+    (Logan Rathbone)
+  - data: Reinstate help2man manpage autogeneration (Logan Rathbone)
+  - build: Make manpage/help2man requirement more explicit (Logan Rathbone)
+  - ci: Add help2man as 'build_fedora' target build dep (Logan Rathbone)
+  - Translation updates:
+      Anders Jonsson (sv)
+      Asier Sarasua Garmendia (eu)
+      Balázs Úr (hu)
+      Boyuan Yang (zh_CN)
+      Jordi Mas i Hernandez (ca)
+      Kukuh Syafaat (id)
+      Martin (sl)
+      Sabri Ünal (tr)
+      Sergej A (ru)
+
+Zenity 3.99.1
+  2nd beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+    - question: do not hardcode "Yes" and "No" buttons (kelvinvoon)
+    - Set the default response explicitly for all AdwMessageDialog's (Lukáš
+      Tyrychtr)
+    - column-view: Widget should go directly in GtkScrolledWindow (Logan
+      Rathbone)
+    - msg: Make --ok-label and --cancel-label work for --question dialogs
+      (Logan Rathbone)
+    - Add separate case for ZENITY_ESC; don't print junk or crash with extra
+      buttons (Logan Rathbone)
+    - Fix --extra-button and delete events for legacy (non-libadwaita) dialogs
+      (Logan Rathbone)
+    - filesel: Fix --filename for zenity 4.x (Logan Rathbone)
+    - Translation updates:
+        Balázs Úr (hu)
+        Ekaterine Papava (ka)
+        Piotr Drąg (pl)
+        Yuri Chornoivan (uk)
+
+Zenity 3.99.0
+  1st beta release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+
+  I would consider this release feature-complete for 4.0, but there are still
+  some bug reports flowing in, particularly for STDIN-related operations, that
+  need some further tweaking before a stable 4.0 release.
+
+    - option: Add various non-fatal deprecation warnings that were previously
+      missing, and fix a misleading deprecation message for `--window-icon`
+      (Logan Rathbone)
+    - main: Add G_APPLICATION_FLAGS_NON_UNIQUE to GApplication flags (fixes
+      #58) (Logan Rathbone)
+    - util: remove fatal assert on exit if window invalid GtkWindow (Logan
+      Rathbone)
+    - progress: Cleanup unnecessary static objects and remove spurious builder
+      unref (Logan Rathbone)
+    - util: Ignore superfluous quit requests (Logan Rathbone)
+    - util: Remove superfluous GtkWindow cast check (Logan Rathbone)
+    - data: Manpage generation changes; don't automatically generate the
+      manpage from help2man for now (this will preferably be reinstated
+      post-4.0 once the issues are worked out) (Logan Rathbone)
+    - a11y: Label the widgets in a forms UI properly (Lukáš Tyrychtr)
+    - Translation updates:
+        Anders Jonsson (sv)
+        Ekaterine Papava (ka)
+        Jordi Mas i Hernandez (ca)
+        Kukuh Syafaat (id)
+        Piotr Drąg (pl)
+        Sabri Ünal (tr)
+        Sergej A (ru)
+        Yuri Chornoivan (uk)
+
+Zenity 3.92.0
+  3rd alpha release of the upcoming zenity 4.x, based on libadwaita/gtk4.
+    - progress: don't update responses that aren't there (see: !25 and
+      https://bugzilla.redhat.com/show_bug.cgi?id=2177287) (Adam Williamson)
+    - Set dialog 'heading', not 'title' for the --title option (see: !26) (Adam
+      Williamson)
+    - tree: fix handling of multi-row stdin input (#54) (Adam Williamson)
+    - tree-column-view: don't steal children (see: !28) (Adam Williamson)
+    - Port to webkitgtk 6.0 (Adam Williamson)
+    - webkit: Fix leak by removing unnecessary ref sink (Logan Rathbone)
+    - option: Add non-fatal deprecation warning for --confirm-overwrite (#55)
+      (Logan Rathbone)
+    - help: Fix typo in Basque help translation (Andre Klapper)
+    - Translation updates:
+        Andika Triwidada (id)
+        Asier Sarasua Garmendia (eu)
+        Balázs Úr (hu)
+        Ekaterine Papava (ka)
+        Piotr Drąg (pl)
+        Sergej A (ru)
+        Yuri Chornoivan (uk)
+
+Zenity 3.91.0
+    - tree: Port to GtkColumnView (Logan Rathbone)
+    - desktop file: Remove spurious translation comment (Logan Rathbone)
+    - i18n: rename POTFILES to POTFILES.in (Piotr Drąg)
+    - help: Fix invalid markup in German help translation (Andre Klapper)
+    - help: Freedesktop.org spec fixes (Anders Jonsson)
+    - Translation updates:
+        Anders Jonsson (sv)
+        Yuri Chornoivan (uk)
+        Jürgen Benvenuti (de)
+        Ekaterine Papava (ka)
+        Kukuh Syafaat (id)
+        Martin (sl)
+        Aurimas Černius (lt)
+        Aleksandr Melman (ru)
+        Sergej A (ru)
+        Sabri Ünal (tr)
+        Anders Jonsson (sv)
+
+Zenity 3.90.0
+    - Initial alpha release based on libadwaita and GTK4 (Logan Rathbone)
+
+Zenity 3.44.0
+    - scale: set a page increment so mouse wheel can be used on widget (Hg)
+    - build: Use GNOME module post_install() (Matt Turner)
+    - docs: Fix incorrect markup (Andre Klapper)
+    - build: Replace deprecated functions (Logan Rathbone)
+    - Translation updates:
+        Alexander Shopov (bg)
+        Jiri Grönroos (fi)
+        Nart Tlisha (ab)
+        Sabri Ünal (tr)
+        Sergej A (ru)
+
+Zenity 3.43.0
+    - Documentation updates (Logan Rathbone)
+    - Bump WebkitGTK dependency to API 4.1, for GNOME 43 (Logan Rathbone)
+    - Translation updates:
+        Zurab Kargareteli (ka)
+
+Zenity 3.42.1
+    - scale: Make OK button default (allows pressing Enter to accept selected
+      value) (hydrargyrum)
+    - Fix maximum width of message dialogs to 60 characters, and make message
+      dialogs non-resizable (fixes regression from 3b64d05e) (David King)
+
+Zenity 3.42.0
+    - tree: Clicking row checks radio/checkboxes (Logan Rathbone)
+    - Fix search column selection with --imagelist (Janne Pulkkinen)
+    - Translation updates:
+        Asier Sarasua Garmendia (eu)
+        Efstathios Iosifidis (el)
+        Goran Vidović (hr)
+        Quentin PAGÈS (oc)
+        Alan Mortensen (da)
+        Daniel Mustieles (es)
+
 Zenity 3.41.0
     - Port to meson (Logan Rathbone)
     - Code cleanups (Simon McVittie)

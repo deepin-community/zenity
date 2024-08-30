@@ -1,3 +1,2 @@
-usr/share/zenity/
-usr/share/locale/
-usr/share/help/
+usr/share/locale
+usr/share/help
