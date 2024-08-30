@@ -1,2 +1,4 @@
-usr/bin/
-usr/share/man/
+usr/bin
+usr/share/applications
+usr/share/icons
+usr/share/man
